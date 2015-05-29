@@ -1,0 +1,24 @@
+ol.round-two-list1 {
+    list-style-type: decimal-leading-zero;
+}
+
+ol.round-two-list2 {
+    list-style-type: upper-alpha;
+}
+
+ol.round-two-list3 {
+    list-style-type: upper-roman;
+}
+
+ul.round-two-list4 {
+    list-style-type: circle;
+}
+
+ul.round-two-list5 {
+    list-style-type: disc;
+}
+
+ul.round-two-list6 {
+    list-style-type: square;
+}
+

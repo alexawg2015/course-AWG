@@ -1,0 +1,4 @@
+name = Round two
+description = Round two. There are solutions of tasks.
+version = VERSION
+core = 7.x
