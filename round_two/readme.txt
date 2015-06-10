@@ -5,8 +5,8 @@
  -- вторая (round_two_theming_custom_with_template) - темплейт.
 3. Создать функцию theme_round_two_theming_custom. Для примера будут использованы
   theme_item_list, theme_fieldset, theme_table, include css.
-4. Создать функцию round_two_preprocess_round_two_with_img в которой подготовить
-  переменные для темплейта. Дополнительно будет использована theme_image.
+4. Создать функцию round_two_preprocess_round_two_theming_custom_with_template в которой
+  подготовить переменные для темплейта. Дополнительно будет использована theme_image.
 5. Создать файл round_two_with_img.tpl.php с необходимым содержимым.
 6. Сделать hook_menu и объявить 2 пути для демонстрации обеих тем.
 7. Создать 2 callback для каждого пути. В каждой функции вызвать необходимую
