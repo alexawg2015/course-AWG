@@ -2,23 +2,30 @@
 /**
  * @file
  * Theming page.
- * Task 1. Use custom_theme, theme_item_list, theme_fieldset, theme_table, include css.
+ * Task 1.1. Use custom_theme, theme_item_list, theme_fieldset, theme_table, include css.
+ * Task 1.2. Use custom_theme with template and preprocess, theme_image, theme_item_list,
+ *           theme_fieldset, theme_table, include css.
  */
 
 /**
  * Implements hook_menu().
  */
 function round_two_menu() {
-  $items['round-two/task-1'] = array(
-    'title' => 'Round 2. Task 1.',
+  $items['round-two/task-1-1'] = array(
+    'title' => 'Round 2. Task 1.1.',
     'page callback' => 'round_two_page_task1',
+    'access arguments' => array('access content'),
+  );
+  $items['round-two/task-1-2'] = array(
+    'title' => 'Round 2. Task 1.2.',
+    'page callback' => 'round_two_page_task2',
     'access arguments' => array('access content'),
   );
   return $items;
 }
 
 /**
- * The page callback.
+ * The page callback for task 1.1.
  */
 function round_two_page_task1() {
   $title = t('Round 2');
@@ -59,6 +66,14 @@ function round_two_theme() {
         'title' => NULL,
         'items' => NULL,
       ),
+    ),
+    'round_two_theming_custom_with_template' => array(
+      'variables' => array(
+        'title' => NULL,
+        'items' => NULL,
+        'img_path' => NULL,
+      ),
+      'template' => 'round_two_with_img',
     ),
   );
 }
@@ -104,4 +119,47 @@ function theme_round_two_theming_custom($variables) {
   );
   $output = theme('fieldset', array('element' => $fieldset_element));
   return $output;
+}
+
+/**
+ * The page callback for task 1.2.
+ */
+function round_two_page_task2() {
+  $title = t('Round 2');
+  $items = round_two_build_array_items();
+  $img_path = drupal_get_path('module', 'round_two') . '/ladybird.png';
+  $element_array = array(
+    'title ' => $title,
+    'items' => $items,
+    'img_path' => $img_path,
+  );
+  $output = theme('round_two_theming_custom_with_template', $element_array);
+  return $output;
+}
+
+/**
+ * Implements hook_preprocess() for round_two_with_img.tpl.php.
+ * @param $variables
+ */
+function round_two_preprocess_round_two_theming_custom_with_template(&$variables) {
+  // created $variables['img']
+  $image = array(
+    'style_name' => 'Thumbnail',
+    'path' => $variables['img_path'],
+    'alt' => $variables['title'],
+    'title' => $variables['title'],
+    'width' => '100px',
+    'hight' => '100px',
+  );
+  $img_html = theme('image', $image);
+  $image_link = l($img_html, $variables['img_path'], array('html' => TRUE));
+  $variables['img'] = $image_link;
+  // created $variables['items']
+  $for_theming_custom = array(
+    'title' => $variables['title'],
+    'items' => $variables['items'],
+  );
+  $variables['items'] = theme('round_two_theming_custom', $for_theming_custom);
+  // add css
+  drupal_add_css(drupal_get_path('module', 'round_two') . '/round_two.css');
 }
