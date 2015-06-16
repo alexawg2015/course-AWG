@@ -1,0 +1,38 @@
+name = rndtwo
+description = Please provide a description for your theme.
+base theme = omega
+screenshot = screenshot.png
+engine = phptemplate
+core = 7.x
+
+; ========================================
+; Stylesheets
+; ========================================
+stylesheets[all][] = css/rndtwo.normalize.css
+stylesheets[all][] = css/rndtwo.hacks.css
+stylesheets[all][] = css/rndtwo.styles.css
+stylesheets[all][] = css/rndtwo.no-query.css
+
+; ========================================
+; Scripts
+; ========================================
+scripts[] = js/rndtwo.behaviors.js
+
+; ========================================
+; Regions
+; ========================================
+regions[branding] = Branding
+regions[header] = Header
+regions[navigation] = Navigation
+regions[highlighted] = Highlighted
+regions[help] = Help
+regions[top_first] = Top First
+regions[top_second] = Top Second
+regions[top_third] = Top Third
+regions[content] = Content
+regions[sidebar_first] = First Sidebar
+regions[sidebar_second] = Second Sidebar
+regions[bottom_first] = Bottom First
+regions[bottom_second] = Bottom Second
+regions[bottom_third] = Bottom Third
+regions[footer] = Footer

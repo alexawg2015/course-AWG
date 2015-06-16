@@ -1,0 +1,8 @@
+.l-footer {
+  background-color: $region-bgcolor;
+  border: solid 2px $region-border-color;
+  @include border-bottom-radius(25px);
+  min-height: 40px;
+  margin-top: 5px;
+  text-align: center;
+}

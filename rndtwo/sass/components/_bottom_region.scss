@@ -1,0 +1,19 @@
+.l-region-bottom {
+  background-color: $region-bgcolor;
+  border: solid 2px $region-border-color;
+  min-height: 70px;
+  @include gallery(2 of 6);
+  margin-top: 15px;
+}
+
+.l-bottom-first {
+  @include border-top-right-radius(25px);
+}
+
+.l-bottom-second {
+  @include border-top-radius(25px);
+}
+
+.l-bottom-third {
+  @include border-top-left-radius(25px);
+}

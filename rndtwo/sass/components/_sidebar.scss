@@ -1,0 +1,47 @@
+$span-sidebars-left: 20 static isolate (column-width:11px);
+$span-sidebars-right: 20 static isolate (column-width:14px) last;
+
+.l-sidebar-first {
+  @include span($span-sidebars-left);
+  @include border-top-right-radius(25px);
+  @include border-bottom-right-radius(25px);
+  border: solid 2px $region-border-color;
+}
+
+.l-sidebar-second {
+  @include span($span-sidebars-right);
+  @include border-top-left-radius(25px);
+  @include border-bottom-left-radius(25px);
+  border: solid 2px $region-border-color;
+}
+
+.l-region-sidebars-wrapper {
+  min-height: 100px;
+  background-color: $region-bgcolor;
+  padding: 10px;
+}
+
+.l-content {
+  width: 100%;
+  padding-left: 320px;
+  padding-right: 450px;
+  padding-top: 10px;
+  margin-right: 450px;
+}
+
+$span-sidebars-left: 15 static isolate (column-width:11px);
+
+@media (max-width: 800px) {
+  .l-sidebar-first {
+    @include span(1 of 3 last);
+  }
+  .l-content {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .l-sidebar-first {
+    display: none;
+  }
+}

@@ -1,0 +1,9 @@
+@import "susy";
+
+$susy: (
+        columns: 12,
+);
+
+.container {
+  @include container(100%);
+}

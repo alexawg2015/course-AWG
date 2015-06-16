@@ -1,0 +1,141 @@
+@import "susyone";
+
+/**
+ * Mobile
+ */
+div.l-main-menu {
+  color: #fff;
+
+  #rndtwo-toggle-menu {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: 0;
+    top: 0;
+    background: #efefef url(../images/menu-toggle.png) no-repeat center;
+    background-size: 20px auto;
+    text-indent: -9999px;
+
+    &.on {
+      background-color: #0f69b4;
+      background-image: url(../images/menu-toggle-on.png);
+    }
+  }
+  ul.menu {
+    margin: 0px;
+    padding: 0px;
+    li {
+      list-style: none;
+      margin: 0px;
+      a {
+        display: block;
+        padding: 15px 10px;
+        &:hover {
+          background: #0b4e85;
+        }
+      }
+      ul {
+        border-top: 1px solid #1384e3;
+        li a {
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+  & > ul.menu {
+    display: none;
+    position: relative;
+    padding: 0px 30px;
+  }
+}
+
+/**
+ * Main menu
+ */
+
+@media(min-width: 800px) {
+  div.l-main-menu {
+    color: #475156;
+    width: 100%;
+    display: block;
+    bottom: 0px;
+    /*   position: absolute;*/
+    max-width: 100%;
+    margin: 0 0 10px 0;
+    border: solid 2px $region-border-color;
+    background-color: $region-bgcolor;
+    @include border-radius(10px);
+
+    #rndtwo-toggle-menu {
+      display: none;
+    }
+    ul.menu {
+      display: inline-block;
+      li {
+        margin: 0;
+        display: inline-block;
+        text-align: center;
+        position: relative;
+        list-style: none;
+        a {
+          height: 50px;
+          padding: 18px 15px 12px 15px;
+          display: block;
+          font-size: 14px;
+          text-decoration: none;
+          &.active,
+          &:hover {
+            background: $region-border-color;
+            color: yellow;
+          }
+        }
+      }
+    }
+
+    // Sub menu
+    ul.menu {
+
+      ul.menu {
+        position: absolute;
+        z-index: 9;
+        background: #0f69b4;
+        width: 100%;
+        display: none !important;
+        border-top: none;
+        padding: 0;
+        margin: 0;
+        li {
+          float: none;
+          text-align: center;
+          border-bottom: 1px solid #3091C1;
+          display: block;
+
+          a {
+            padding: 10px 5px;
+            color: #fff;
+            border: none;
+            font-size: 12px;
+            height: auto;
+
+            &.active {
+              background: #0f69b4;
+            }
+
+            &:hover {
+              background: #045282;
+              color: #fff;
+              border-bottom: none;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+
+      li:hover ul {
+        display: block !important;
+      }
+
+    }
+  }
+}
+

@@ -1,0 +1,23 @@
+$span-logo: 5 static isolate (column-width:50px);
+
+.l-branding {
+
+  .logo {
+    @include span($span-logo);
+  }
+  h1 {
+    width: 80%;
+    text-align: center;
+    padding-top: 45px;
+    a {
+      text-decoration: none;
+    }
+  }
+
+}
+
+@media (max-width: 800px) {
+  .l-branding {
+    display: none;
+  }
+}

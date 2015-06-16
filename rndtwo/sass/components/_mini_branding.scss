@@ -1,0 +1,23 @@
+$span-mini-logo: 1 static isolate (column-width:70px);
+
+.l-mini-branding {
+  display: none;
+  .mini-logo {
+    @include span($span-mini-logo);
+  }
+  .site-name-wrapper {
+    @include span(full);
+    padding-left: 100px;
+    padding-right: 80px;
+    margin-top: -70px;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .l-mini-branding {
+    display: block;
+  }
+}
