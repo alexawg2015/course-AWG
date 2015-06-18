@@ -38,6 +38,9 @@ $span-sidebars-left: 15 static isolate (column-width:11px);
   .l-content {
     padding-left: 0;
   }
+  .l-sidebar-second {
+    display: none;
+  }
 }
 
 @media (max-width: 600px) {
