@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * CTools plugins for Round Three.
+ */
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function round_three_lt_ctools_plugin_directory($module, $plugin) {
+  if ($module == 'panels' && $plugin == 'layouts') {
+    return 'plugins/layouts';
+  }
+  $plagin_ctools = array('content_types', 'arguments', 'contexts');
+  if ($module == 'ctools' && in_array($plugin, $plagin_ctools)) {
+    return 'plugins/' . $plugin;
+  }
+}
