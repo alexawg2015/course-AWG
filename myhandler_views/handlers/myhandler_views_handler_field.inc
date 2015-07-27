@@ -1,6 +1,6 @@
 <?php
 
-class myhandler_views_handler_field_markup extends views_handler_field {
+class myhandler_views_handler_field extends views_handler_field {
   function render($values) {
     $value = $this->get_value($values);
     if ($value) {
