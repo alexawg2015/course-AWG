@@ -12,8 +12,8 @@ function round_three_lt_ctools_plugin_directory($module, $plugin) {
   if ($module == 'panels' && $plugin == 'layouts') {
     return 'plugins/layouts';
   }
-  $plagin_ctools = array('content_types', 'arguments', 'contexts');
-  if ($module == 'ctools' && in_array($plugin, $plagin_ctools)) {
+  $plugin_ctools = array('content_types', 'arguments', 'contexts');
+  if ($module == 'ctools' && in_array($plugin, $plugin_ctools)) {
     return 'plugins/' . $plugin;
   }
 }

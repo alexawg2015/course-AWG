@@ -1,0 +1,9 @@
+name = My handler views
+description = My handler views.
+version = VERSION
+core = 7.x
+
+; Views handlers
+files[] = /handlers/myhandler_views_handler_field.inc
+files[] = /handlers/myhandler_views_handler_filter_string.inc
+; files[] = /handlers/myhandler_views_handler_argument_string.inc
