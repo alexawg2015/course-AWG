@@ -7,4 +7,22 @@ function myhandler_views_views_api() {
   return array(
     'api' => 3,
   );
+//  $city = global_filter_get_session_value('view_city');
+//  if(is_numeric($city)){
+//    $phone = db_select('field_data_field_phone', 'n')
+//      ->fields('n', array('field_phone_value'))
+//      ->condition('n.entity_type', 'taxonomy_term')
+//      ->condition('n.entity_id', $city)
+//      ->execute()
+//      ->fetchField();
+//    if($phone){
+//      list($name_city,$phone_print) = explode('|',$phone);
+//      print($phone_print);
+//    }
+//  }
+//  if(empty($phone)){
+//    print('+7 (499) 702-33-08');
+//  }
+
+
 }
