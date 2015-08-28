@@ -95,22 +95,20 @@ function ticket_user_form_content_type_edit_form_submit($form, &$form_state) {
 }
 
 function ticket_form_ticket_form_alter(&$form, &$form_state, $form_id){
-  $form ['#submit'] = 'ticket_user_form_content_type_submit';
+  $form ['#submit'][] = 'ticket_user_form_content_type_submit';
 }
 
 function ticket_user_form_content_type_submit($form, &$form_state){
-  ticket_form_submit($form, &$form_state);
   $conf = $form_state['conf'];
   if (user_access('administer ticket entities')) {
-    $path = $conf['ticket_redirect_admin'];
+      $path = $conf['ticket_redirect_admin'];
   }
   else {
-    $path = $conf['ticket_redirect_user'];
+      $path = $conf['ticket_redirect_user'];
   }
 
-//  if ($path) {
+  if ($path) {
 //    $path = str_replace('%ticket', $entity->tid, $path);
-//    $form_state['redirect'] = $path;
-//  }
-  $fr = $form_state;
+    $form_state['redirect'] = $path;
+  }
 }
