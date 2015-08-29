@@ -258,6 +258,8 @@ function ticket_form_submit($form, &$form_state) {
 
   entity_form_submit_build_entity('ticket', $entity, $form, $form_state);
 
+  $form_state['entity'] = $entity;
+
   if (ticket_save($entity)) {
     drupal_set_message('Ticket save');
   }
