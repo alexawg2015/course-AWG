@@ -1,8 +1,0 @@
-name = DruHelp Project
-description = DruHelp Project module.
-package = DruHelp
-core = 7.x
-version = VERSION
-
-dependencies[] = panels
-dependencies[] = ctools
