@@ -1,0 +1,19 @@
+<?php
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function druhelp_project_ctools_plugin_directory($module, $plugin) {
+  $plugin_ctools = array('content_types');
+  if ($module == 'ctools' && in_array($plugin, $plugin_ctools)) {
+    return 'plugins/' . $plugin;
+  }
+}
+
+function druhelp_project_get_spacework_by_uid($uid){
+  $spacework = db_select('alpha_workspace', 'n')
+    ->fields('n')
+    ->condition('n.uid', $uid)
+    ->execute()
+    ->fetchAssoc();
+  return $spacework;
+}
